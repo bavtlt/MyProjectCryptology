@@ -3,7 +3,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 public class GeneralFiles {
-    static String getNewFilePath(String filePath, String filenameEnding){
+
+    public static String getNewFilePath(String filePath, String filenameEnding){
 
         int dotIndex = filePath.lastIndexOf(".");
         String pathBeforeDot = filePath.substring(0, dotIndex);
@@ -13,11 +14,11 @@ public class GeneralFiles {
         return newFilePath;
     }
 
-    static void writeNewTextToFile(String text, String newFilePath) throws IOException {
+    public static void writeNewTextToFile(String text, String newFilePath) throws IOException {
         Files.writeString(Path.of(newFilePath), text);
     }
 
-    static String getFileText(String filePath) {
+    public static String getFileText(String filePath) {
 
         try {
             return new String(Files.readAllBytes(Path.of(filePath)));
