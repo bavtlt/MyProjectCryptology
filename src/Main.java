@@ -1,9 +1,9 @@
-import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
+
         try(Scanner scanner = new Scanner(System.in)) {
 
             String firstMenuPage = "Выберите действие, введя его номер:\n" +
@@ -18,16 +18,16 @@ public class Main {
                 int menuItem = scanner.nextInt();
 
                 if (menuItem == 1) {
-                    СryptographFiles.encryptFileWithKey();
+                    CryptographFiles.encryptFileWithKey();
                     break;
                 } else if (menuItem == 2) {
-                    СryptographFiles.decryptFileWithKey();
+                    CryptographFiles.decryptFileWithKey();
                     break;
                 } else if (menuItem == 3) {
-                    СryptographFiles.decryptFileBruteForce();
+                    CryptographFiles.decryptFileBruteForce();
                     break;
                 } else if (menuItem == 4) {
-                    СryptographFiles.decryptFileStatisticalAnalysis();
+                    CryptographFiles.decryptFileStatisticalAnalysis();
                     break;
                 } else if (menuItem == 5) {
                     System.exit(0);
