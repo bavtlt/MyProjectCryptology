@@ -2,6 +2,8 @@ import java.util.Scanner;
 
 public class Main {
 
+    private static final Scanner SCANNER = new Scanner(System.in);
+
     public static void main(String[] args) {
 
         while (true) {
@@ -13,8 +15,13 @@ public class Main {
                                    "5. Завершить программу.\n";
             System.out.println(firstMenuPage);
 
-            Scanner scanner = new Scanner(System.in);
-            int menuItem = scanner.nextInt();
+            int menuItem;
+            if (SCANNER.hasNextInt()) {
+                menuItem = SCANNER.nextInt();
+            } else {
+                SCANNER.nextLine();
+                continue;
+            }
 
             if (menuItem == 1) {
                 CryptographFiles.encryptFileWithKey();
@@ -32,4 +39,5 @@ public class Main {
             }
         }
     }
+
 }
